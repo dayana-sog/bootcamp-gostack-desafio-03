@@ -13,17 +13,17 @@ A aplicação que iremos dar início ao desenvolvimento a partir de agora é um 
 3.  Somente o usuário administrador poderá cadastrar os destinatários que serão  mantidos (cadastrados/atualizados) na aplicação, e esses devem ter o **nome** do destinatário e campos de endereço: **rua**, **número**, **complemento**, **estado**, **cidade** e **CEP**.
 
 ## :computer: Ferramentas Utilizadas
--  [Node.js]([https://nodejs.org/en/](https://nodejs.org/en/))
-- [Express]([https://expressjs.com/](https://expressjs.com/))
-- [Docker]([https://www.docker.com/](https://www.docker.com/))
-- [Postgres]([https://www.postgresql.org/](https://www.postgresql.org/))
-- [Yarn]([https://classic.yarnpkg.com/en/](https://classic.yarnpkg.com/en/))
-	* [Sequelize]([https://sequelize.org/](https://sequelize.org/))
-	* [Yup]([https://classic.yarnpkg.com/en/package/yup](https://classic.yarnpkg.com/en/package/yup))
-	* [JsonWebToken]([https://classic.yarnpkg.com/en/package/jsonwebtoken](https://classic.yarnpkg.com/en/package/jsonwebtoken))
-	* [Bcrypt]([https://classic.yarnpkg.com/en/package/bcryptjs](https://classic.yarnpkg.com/en/package/bcryptjs))
-	* [Eslint]([https://classic.yarnpkg.com/en/package/eslint](https://classic.yarnpkg.com/en/package/eslint))
-	* [Prettier]([https://classic.yarnpkg.com/en/package/prettier](https://classic.yarnpkg.com/en/package/prettier))
+-  [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [Docker](https://www.docker.com/)
+- [Postgres](https://www.postgresql.org/)
+- [Yarn](https://classic.yarnpkg.com/en/)
+	* [Sequelize](https://sequelize.org/)
+	* [Yup](https://classic.yarnpkg.com/en/package/yup)
+	* [JsonWebToken](https://classic.yarnpkg.com/en/package/jsonwebtoken)
+	* [Bcrypt](https://classic.yarnpkg.com/en/package/bcryptjs)
+	* [Eslint](https://classic.yarnpkg.com/en/package/eslint)
+	* [Prettier](https://classic.yarnpkg.com/en/package/prettier)
 
 
 
