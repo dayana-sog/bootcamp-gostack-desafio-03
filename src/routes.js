@@ -8,6 +8,7 @@ import RecipientsController from './app/controllers/RecipientsController';
 import FileController from './app/controllers/FileController';
 import DeliverymanController from './app/controllers/DeliverymanController';
 import DeliveriesController from './app/controllers/DeliveriesController';
+import DistributeController from './app/controllers/DistributeController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -22,6 +23,12 @@ routes.use(authMiddleware);
 
 routes.put('/users', UserController.update);
 routes.post('/recipients', RecipientsController.store);
+
+routes.get('/deliveryman/:id/deliveries', DistributeController.index);
+routes.put(
+  '/deliveryman/:deliveryman_id/deliveries/:id',
+  DistributeController.update
+);
 
 routes.post('/file', upload.single('file'), FileController.store);
 
