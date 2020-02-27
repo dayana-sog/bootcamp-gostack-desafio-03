@@ -58,7 +58,7 @@ class DistributeController {
     });
 
     if (!deliverymanExists) {
-      return res.status(400).json({ error: 'Delivery does not exists.' });
+      return res.status(400).json({ error: 'Deliveryman does not exists.' });
     }
 
     return res.json(deliveries);

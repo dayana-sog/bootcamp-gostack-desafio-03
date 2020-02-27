@@ -9,6 +9,7 @@ import FileController from './app/controllers/FileController';
 import DeliverymanController from './app/controllers/DeliverymanController';
 import DeliveriesController from './app/controllers/DeliveriesController';
 import DistributeController from './app/controllers/DistributeController';
+import DeliveredController from './app/controllers/DeliveredController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -29,6 +30,7 @@ routes.put(
   '/deliveryman/:deliveryman_id/deliveries/:id',
   DistributeController.update
 );
+routes.get('/deliveryman/:id/delivered', DeliveredController.index);
 
 routes.post('/file', upload.single('file'), FileController.store);
 
