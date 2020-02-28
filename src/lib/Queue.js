@@ -34,6 +34,10 @@ class Queue {
       bee.on('failed', this.handleFailure).process(handle);
     });
   }
+
+  handleFailure(job, err) {
+    console.log(` Queue ${jobs.queue.name}: FAILED`, err);
+  }
 }
 
 export default new Queue();

@@ -25,7 +25,6 @@ class Database {
     this.mongo();
   }
 
-  // Faz a conexão com a base de dados.
   init() {
     this.connection = new Sequelize(databaseConfig);
 
@@ -36,14 +35,11 @@ class Database {
   }
 
   mongo() {
-    this.mongoConnection = mongoose.connect(
-      'mongodb://localhost:27017/fastfeet',
-      {
-        useNewUrlParser: true,
-        useFindAndModify: true,
-        useUnifiedTopology: true,
-      }
-    );
+    this.mongoConnection = mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useFindAndModify: true,
+      useUnifiedTopology: true,
+    });
   }
 }
 
