@@ -1,11 +1,13 @@
-import { parseISO, getHours, isBefore } from 'date-fns';
+import { parseISO, getHours, isBefore, startOfDay, endOfDay } from 'date-fns';
 import * as Yup from 'yup';
+import { Op } from 'sequelize';
 import Delivery from '../models/Delivery';
 import File from '../models/File';
 import Deliveryman from '../models/Deliveryman';
 import Recipient from '../models/Recipients';
 
 class DistributeController {
+  // Show all deliveries the deliveryman has.
   async index(req, res) {
     const { page = 1 } = req.query;
 
@@ -65,6 +67,7 @@ class DistributeController {
   }
 
   async update(req, res) {
+    // The deliveryman updates the start_at, end_at, and add a signature
     const schema = Yup.object().shape({
       start_at: Yup.date(),
       end_at: Yup.date(),
@@ -128,6 +131,24 @@ class DistributeController {
       if (!signature_id) {
         return res.status(400).json({ error: 'Signature must be provided' });
       }
+    }
+
+    const deliveriesAll = await Delivery.findAll({
+      where: {
+        deliveryman_id: id,
+        canceled_at: null,
+        start_date: {
+          [Op.between]: [startOfDay(parsedStart), endOfDay(parsedStart)],
+        },
+        end_date: null,
+      },
+    });
+
+    // The deliveryman can do just 5 deliveries per day.
+    if (deliveriesAll.length >= 5) {
+      return res
+        .status(400)
+        .json({ error: 'Deliveryman already has 5 deliveries on the day' });
     }
 
     const updated = await delivery.update(req.body);

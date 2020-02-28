@@ -15,10 +15,10 @@ class Mail {
       auth: auth.user ? auth : null,
     });
 
-    this.configueTemplates();
+    this.configureTemplates();
   }
 
-  configueTemplates() {
+  configureTemplates() {
     const viewPath = resolve(__dirname, '..', 'app', 'views', 'emails');
 
     this.transporter.use(

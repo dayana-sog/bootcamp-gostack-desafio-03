@@ -9,6 +9,7 @@ import RegistrationMail from '../jobs/RegistraitonMail';
 import Queue from '../../lib/Queue';
 
 class DeliveriesController {
+  // Verify all deliveries.
   async index(req, res) {
     const deliveries = await Delivery.findAll({
       attributes: ['id', 'product', 'start_at', 'canceled_at', 'end_at'],
